@@ -5,39 +5,46 @@ var pass=bcrypt.hashSync('960106', bcrypt.genSaltSync(8), null);
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('home');
-});
-
-/* GET about page. */
-router.get('/about', function(req, res, next) {
-  res.render('about');
-});
-
-/* GET projects page. */
-router.get('/projects', function(req, res, next) {
-  res.render('projects');
-});
-
-/* GET services page. */
-router.get('/services', function(req, res, next) {
-  res.render('services');
-});
-
-/* GET contact me page. */
-router.get('/contact', function(req, res, next) {
-  res.render('contact');
-});
-
-
-
-router.get('/salt', function (req, res, next) {
-    res.render('salt', {
+router.get('/', function (req, res, next) {
+    res.render('home', {
         title: 'Home',
-        pass: pass,
         displayName: req.user ? req.user.displayName : ''
     });
 });
+
+/* GET about page. */
+router.get('/about', function (req, res, next) {
+    res.render('about', {
+        title: 'About',
+        displayName: req.user ? req.user.displayName : ''
+    });
+});
+/* GET projects page. */
+router.get('/projects', function (req, res, next) {
+    res.render('projects', {
+        title: 'Projects',
+        displayName: req.user ? req.user.displayName : ''
+    });
+});
+
+/* GET services page. */
+router.get('/services', function (req, res, next) {
+    res.render('services', {
+        title: 'Service',
+        displayName: req.user ? req.user.displayName : ''
+    });
+});
+/* GET contact me page. */
+router.get('/contact', function (req, res, next) {
+    res.render('contact', {
+        title: 'Contact',
+        displayName: req.user ? req.user.displayName : ''
+    });
+});
+
+
+
+
 
 /*loads login page and checks if the user is logged in if they are redirect to users*/
 router.get('/login', function (req, res, next) {
