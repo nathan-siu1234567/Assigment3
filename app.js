@@ -22,6 +22,7 @@ mongoose.connection.on('error', function() {
 // Route Alias
 var routes = require('./server/routes/index');
 var users = require('./server/routes/users');
+var todos = require('./server/routes/todos');
 
 var app = express();
 
