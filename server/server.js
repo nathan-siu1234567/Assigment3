@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('lesson4:server');
+var debug = require('debug')('passport:server');
 var http = require('http');
 
 /**
